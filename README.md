@@ -17,3 +17,7 @@ default settings, and then change the model parameters in "namelist.m"
 
 Hing Ong, 23 Jan 2019
 hwang2@albany.edu
+___________________________________________________________________________
+
+Fix bugs in "basic_state," "analyses," and "forcing"
+Hing Ong, 06 Mar 2019 
