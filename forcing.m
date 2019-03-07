@@ -11,6 +11,10 @@ Q_0 = Q_y.*Q_z;
 max_prec_0 = max(trapz(rho .* Q_0(in_z,in_y))) * dz / Lc / rho_water * 1000 * 86400;
 Q = Q_0 * max_prec / max_prec_0;
 prec_mm_day = trapz(rho .* Q(in_z,in_y)) * dz / Lc / rho_water * 1000 * 86400;
+% Include radiative cooling so that mean Q on every level is zero.
+rad = mean(Q,2);
+rad = repmat(rad,[1,length(Q_y)]);
+Q = Q - rad;
 % Calculate the forcing.
 dQdy = (Q(in_z,in_y+1) - Q(in_z,in_y-1)) * 0.5 * rdy;
 F = rho * g / cp ./ T .* dQdy;

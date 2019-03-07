@@ -13,11 +13,11 @@ th = T ./ Exner;
 % basic state inverse density scale height (extrapolation on the boundaries)
 rho_up = [rho(2:end,:) ; 2 * rho(end,:) - rho(end-1,:)];
 rho_lo = [2 * rho(1,:) - rho(2,:) ; rho(1:end-1,:)];
-rH = - (rho_up - rho_lo) * rdz ./ rho;
+rH = - (rho_up - rho_lo) * 0.5 * rdz ./ rho;
 % basic state squared Brunt-Vaisala frequency (extrapolation on the boundaries)
 th_up = [th(2:end,:) ; 2 * th(end,:) - th(end-1,:)];
 th_lo = [2 * th(1,:) - th(2,:) ; th(1:end-1,:)];
-N2 = (th_up - th_lo) * rdz * g ./ th;
+N2 = (th_up - th_lo) * 0.5 * rdz * g ./ th;
 % beta
 beta = 2 * Omega / a;
 end

@@ -10,6 +10,10 @@ format compact
 % The model solves the equation iteratively using the multigrid method.
 % Hing Ong, 23 Jan 2019
 
+% version 2
+% Fix bugs in "basic_state," "analyses," and "forcing"
+% Hing Ong, 06 Mar 2019
+
 % INITIALIZE_______________________________________________________________
 namelist
 max_u_table=zeros(numel(MU),numel(SIGMA));
@@ -33,8 +37,8 @@ for i_mu = 1:numel(MU)
             [psi_NCT,residual_NCT,i_NCT] = solutions(psi_first,max_iteration,tolerance,A_NCT,B_NCT,C_NCT,D_NCT,E_NCT,F,rdy,rdz,in_y,in_z,y,z);
             [psi_TCT,residual_TCT,i_TCT] = solutions(psi_first,max_iteration,tolerance,A_TCT,B_TCT,C_TCT,D_TCT,E_TCT,F,rdy,rdz,in_y,in_z,y,z);
 % ANALYZE__________________________________________________________________
-            [v_NCT,w_NCT,u_NCT,th_NCT] = analyses(Omega,psi_NCT,in_y,in_z,rdy,rdz,rho,beta,y,alpha,N2,th,g);
-            [v_TCT,w_TCT,u_TCT,th_TCT] = analyses(0,psi_TCT,in_y,in_z,rdy,rdz,rho,beta,y,alpha,N2,th,g);
+            [v_NCT,w_NCT,u_NCT,th_NCT] = analyses(Omega,psi_NCT,in_y,in_z,rdy,rdz,rho,beta,y,alpha,Q,cp,T,N2,th,g);
+            [v_TCT,w_TCT,u_TCT,th_TCT] = analyses(0,psi_TCT,in_y,in_z,rdy,rdz,rho,beta,y,alpha,Q,cp,T,N2,th,g);
 % OUTPUT___________________________________________________________________
             max_u_table(i_mu,i_sigma) = max(max(u_NCT));
             max_du_table(i_mu,i_sigma)= max(max(u_TCT-u_NCT));
