@@ -7,6 +7,7 @@ Omega = 7.292e-5; % rotation rate of Earth, s^-1
 a = 6.38e6; % radius of Earth, m
 Lc = 2.5e6; % specific latent heat of water condensation, J kg^-1
 rho_water = 1e3; % density of liquid water, kg m^-3
+
 % domain parameters
 % For better performance, ny and nz should be 2^n+1.
 ny = 129; % number of grid points in y
@@ -15,12 +16,14 @@ dy = 1e5; % grid spacing in y, m
 dz = 500; % grid spacing in z, m
 y_center = 0; % position of the domain, m
 z_start = 0; % position of the domain, m
+
 % basic state parameters
 tropopause = 1.6e4; % height at the tropopause, m
 T_surf = 300; % temperature at the surface, K
 Gamma_tropo = -6.5e-3; % dT/dz in the troposphere, K m^-1
 Gamma_strato = 2.6e-3; % dT/dz in the stratosphere, K m^-1
 p_surf = 101325; % pressure at the surface, Pa
+
 % forcing parameters
 % max_prec = 9 mm day^-1, mu = 6e5 m, and sigma = 2.5e5 m yield a Gaussian
 % distribution that fit the distribution of the mean precipitation in May
@@ -28,9 +31,14 @@ p_surf = 101325; % pressure at the surface, Pa
 max_prec = 9; % maximum precipitation rate, mm day^-1
 MU = 6e5; %0:1e5:16e5; %6e5; % distance of the heating maximum from the equator, m
 SIGMA = 2.5e5; %1e5:2.5e4:4e5; %2.5e5; % 1/4 width of the Gaussian heating distribution, m
+gamma = 0; % vertical weighting of the squared sine distribution
+           % mid-heavy: 0; top-heavy: positive e.g. 1; bottom-heavy: negative e.g. -1
+
 % dissipation parameter
 % alpha = 7.292e-7 follows Held and Hou (1980).
 ALPHA = 7.292e-7; % s^-1
+
+% solution parameters
 % first guess of psi, which specifies Dirichlet boundary conditions
 psi_first = zeros(nz,ny);
 % tolerance of residual in the solution of psi
