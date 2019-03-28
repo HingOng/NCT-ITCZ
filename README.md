@@ -21,3 +21,10 @@ ___________________________________________________________________________
 
 Fix bugs in "basic_state," "analyses," and "forcing"
 Hing Ong, 06 Mar 2019 
+___________________________________________________________________________
+
+Add two new features.
+1. Control the vertical weighting of the forcing with a parameter, gamma.
+2. Output norm_u_table and norm_du_table.
+Rearrange the parameter loop. Take the alpha loop to outer.
+Hing Ong, 27 Mar 2019
