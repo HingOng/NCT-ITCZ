@@ -32,7 +32,7 @@ max_prec = 9; % maximum precipitation rate, mm day^-1
 MU = 6e5; %0:1e5:16e5; %6e5; % distance of the heating maximum from the equator, m
 SIGMA = 2.5e5; %1e5:2.5e4:4e5; %2.5e5; % 1/4 width of the Gaussian heating distribution, m
 gamma = 0; % vertical weighting of the squared sine distribution
-           % mid-heavy: 0; top-heavy: positive e.g. 1; bottom-heavy: negative e.g. -1
+           % top-heavy: 0; bottom-heavy: -8
 
 % dissipation parameter
 % alpha = 7.292e-7 follows Held and Hou (1980).

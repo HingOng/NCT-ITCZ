@@ -12,8 +12,8 @@ figure('Color','w','Colormap',cmap(1:14,:))
 hold on
 contourf(y*0.001,z*0.001,(psi_TCT - psi_NCT)*2*pi*a*1e-10,-0.07:0.007:0.028,'LineStyle','None')
 colorbar('Ticks',-0.07:0.035:0);
-contour(y*0.001,z*0.001,(psi_TCT - psi_NCT)*2*pi*a*1e-10,0:0.007:0.028,'LineColor','k','LineStyle','-','LineWidth',0.5)
-contour(y*0.001,z*0.001,(psi_TCT - psi_NCT)*2*pi*a*1e-10,-0.07:0.007:0,'LineColor','k','LineStyle','--','LineWidth',0.5)
+contour(y*0.001,z*0.001,(psi_TCT - psi_NCT)*2*pi*a*1e-10,0.007:0.007:0.028,'LineColor','k','LineStyle','-','LineWidth',0.5)
+contour(y*0.001,z*0.001,(psi_TCT - psi_NCT)*2*pi*a*1e-10,-0.07:0.007:-0.007,'LineColor','k','LineStyle','--','LineWidth',0.5)
 contour(y*0.001,z*0.001,psi_NCT*2*pi*a*1e-10,2:2:12,'LineColor','k','LineStyle','-','LineWidth',1.5);
 contour(y*0.001,z*0.001,psi_NCT*2*pi*a*1e-10,-2:-2:-12,'LineColor','k','LineStyle','--','LineWidth',1.5);
 set(gca,'Box','on','LineWidth',1,'XLim',y_lim,'XTick',y_tick,...
@@ -27,8 +27,8 @@ figure('Color','w','Colormap',cmap(9:20,:))
 hold on
 contourf(y_in,z_in,w_NCT*1e3,-3.2:1.6:16,'LineStyle','None')
 colorbar('Ticks',0:8:16);
-contour(y_in,z_in,w_NCT*1e3,0:1.6:16,'LineColor','k','LineStyle','-','LineWidth',0.5)
-contour(y_in,z_in,w_NCT*1e3,-3.2:1.6:0,'LineColor','k','LineStyle','--','LineWidth',0.5)
+contour(y_in,z_in,w_NCT*1e3,1.6:1.6:16,'LineColor','k','LineStyle','-','LineWidth',0.5)
+contour(y_in,z_in,w_NCT*1e3,-3.2:1.6:-1.6,'LineColor','k','LineStyle','--','LineWidth',0.5)
 contour(y_in,z_in,v_NCT,0.3:0.3:1.5,'LineColor','k','LineStyle','-','LineWidth',1.5);
 contour(y_in,z_in,v_NCT,-0.3:-0.3:-1.5,'LineColor','k','LineStyle','--','LineWidth',1.5);
 set(gca,'Box','on','LineWidth',1,'XLim',y_lim,'XTick',y_tick,...
@@ -42,8 +42,8 @@ figure('Color','w','Colormap',cmap(9:20,:))
 hold on
 contourf(y_in,z_in,(u_TCT - u_NCT),-0.6:0.3:3,'LineStyle','None')
 colorbar('Ticks',0:1.5:3);
-contour(y_in,z_in,(u_TCT - u_NCT),0:0.3:3,'LineColor','k','LineStyle','-','LineWidth',0.5)
-contour(y_in,z_in,(u_TCT - u_NCT),'LineColor','k','LineStyle','--','LineWidth',0.5)
+contour(y_in,z_in,(u_TCT - u_NCT),0.3:0.3:3,'LineColor','k','LineStyle','-','LineWidth',0.5)
+contour(y_in,z_in,(u_TCT - u_NCT),-0.6:0.3:-0.3,'LineColor','k','LineStyle','--','LineWidth',0.5)
 contour(y_in,z_in,u_NCT,5:5:25,'LineColor','k','LineStyle','-','LineWidth',1.5);
 contour(y_in,z_in,u_NCT,-5:-5:-25,'LineColor','k','LineStyle','--','LineWidth',1.5);
 set(gca,'Box','on','LineWidth',1,'XLim',y_lim,'XTick',y_tick,...
@@ -57,8 +57,8 @@ figure('Color','w','Colormap',cmap(3:20,:))
 hold on
 contourf(y_in,z_in,(th_TCT - th_NCT),-0.144:0.018:0.18,'LineStyle','None')
 colorbar('Ticks',-0.09:0.09:0.18);
-contour(y_in,z_in,(th_TCT - th_NCT),0:0.018:0.18,'LineColor','k','LineStyle','-','LineWidth',0.5)
-contour(y_in,z_in,(th_TCT - th_NCT),-0.144:0.018:0,'LineColor','k','LineStyle','--','LineWidth',0.5)
+contour(y_in,z_in,(th_TCT - th_NCT),0.018:0.018:0.18,'LineColor','k','LineStyle','-','LineWidth',0.5)
+contour(y_in,z_in,(th_TCT - th_NCT),-0.144:0.018:-0.018,'LineColor','k','LineStyle','--','LineWidth',0.5)
 contour(y_in,z_in,(w_TCT - w_NCT)*1e6,5:5:25,'LineColor','k','LineStyle','-','LineWidth',1.5);
 contour(y_in,z_in,(w_TCT - w_NCT)*1e6,-5:-5:-25,'LineColor','k','LineStyle','--','LineWidth',1.5);
 set(gca,'Box','on','LineWidth',1,'XLim',y_lim,'XTick',y_tick,...
